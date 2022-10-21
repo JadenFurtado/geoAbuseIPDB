@@ -11,7 +11,7 @@ class IpGeoData:
         }
         parameters = {"ip":IP}
         r = requests.post(url=URL, params=parameters, headers=header)
-        print(r.text)
+        print("[*] geoData for "+str(IP)+":"+str(r.text))
         return r.text
     
     

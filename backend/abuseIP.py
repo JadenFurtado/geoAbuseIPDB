@@ -16,6 +16,6 @@ class AbuseIPDB:
             "Accept": "application/json"
         }
         r = requests.get(url = URL, params = parameters,headers=header)
-        print(r.text)
+        print("[*] abuseData for "+str(IP)+":"+r.text)
         return r.text
     
