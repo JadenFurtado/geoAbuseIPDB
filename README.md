@@ -51,5 +51,5 @@ I take security seriously and so, any security related changes/suggestions are a
 Integrating this with other modules
 
 ### License:
-<a href="https://github.com/JadenFurtado/selfHelpApp/blob/main/LICENSE">The app is under the Creative Commons Zero v1.0 Universal license</a>
+<a href="https://github.com/JadenFurtado/geoAbuseIPDB/blob/main/LICENSE.md">The app is under the Creative Commons Zero v1.0 Universal license</a>
 
