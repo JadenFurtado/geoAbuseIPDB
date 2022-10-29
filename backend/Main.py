@@ -34,7 +34,6 @@ if __name__=="__main__":
             abuseData[line]['abuseData'] = json.loads(str(aipData))
             gipData = geoip.getIpLocation(line)
             abuseData[line]['geoData'] = json.loads(str(gipData))
-            break
     print(abuseData)
     with open(os.getenv("OUTPUT_FILE"), 'w') as fp:
         json.dump(abuseData, fp)
