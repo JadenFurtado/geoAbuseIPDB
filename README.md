@@ -14,12 +14,12 @@
 A wrapper around abuse IPDB for analyzing IPs as per their geo locations.
 
 ## Table of contents:
-- [About](#About)
+- [About](#about)
 - [Architecture](#architecture-and-design)
 - [Design](#design)
 - [Demonstration & Features](#demonstration)
 - [Technologies Used](#technologies-used)
-- [Local Setup & Contributing](#contributing)
+- [Local Setup & Contributing](#local-setup-and-contribution)
 - [License](#license)
 
 ### About:
@@ -32,7 +32,7 @@ This free online tool allows you to see the geographical location of any IP addr
 
 The objective of this project is to locate abuse IPs from a given list and plot their location on a map by combining the above two to generate KML files which can be imported into Google Maps.
 
-### architecture and design:
+### Architecture and design:
 
 ```
 *
@@ -41,6 +41,8 @@ The objective of this project is to locate abuse IPs from a given list and plot 
 
 ```
 ### Design:
+
+Backend:
 
 * Getting the data from Abuse IPDB:
 ```
@@ -58,13 +60,43 @@ curl https://api.iplocation.net/?ip=8.8.8.8
 
 ```
 
-We then feed the data retrieved into JSON files
+* Generation of KML:
+We generate the KML using simplekml package of python. The python package simplekml was created to generate kml (or kmz). It was designed to alleviate the burden of having to study KML in order to achieve anything worthwhile with it. If you have a simple understanding of the structure of KML, then simplekml is easy to run with and create usable KML.
+<a href="https://pypi.org/project/simplekml/">simplekml</a>
+
+Frontend:
+
+To Be Added
 
 ### Demonstration:
+
 Run: 
 ```
 python Main.py
 ```
+
+Result:
+![image](https://user-images.githubusercontent.com/52862591/198849884-4378415d-ec57-45ed-80f9-98b678b725f1.png)
+
+data.json example output file:
+
+![image](https://user-images.githubusercontent.com/52862591/198849913-4103c762-8a8f-48e2-bb37-a8d4628824d4.png)
+
+data.json has the structure:
+```
+{
+    "<IP from the list>": {
+        "abuseData": {
+            "data": {
+            //AbuseIPDB data
+            }
+        },
+        "geoData": {
+        //geodata
+        }
+    },
+```
+We then feed the data retrieved into JSON files
 
 ### Technologies-used
 For the backend, I have made use of Python and various libraries
@@ -73,6 +105,7 @@ For the backend, I have made use of Python and various libraries
 KML is a file format used to display geographic data in an Earth browser such as Google Earth. KML uses a tag-based structure with nested elements and attributes and is based on the XML standard. All tags are case-sensitive and must appear exactly as they are listed in the KML <a href="https://developers.google.com/kml/documentation/kml_tut">Reference</a>
 
 ### Local Setup and Contribution:
+clone the project locally and initialize the .env file. I have provided an example file for the same and install the packages. Once that is done, run the main file of the project or use individual components from the project to suite your needs. Changes and suggestions are always welcome!
 
 ### Security:
 I take security seriously and so, any security related changes/suggestions are always welcomed!
