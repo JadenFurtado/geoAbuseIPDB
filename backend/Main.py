@@ -1,9 +1,8 @@
+import os
+import json
 from dotenv import load_dotenv
 from abuseIP import AbuseIPDB
-import os
-from dotenv import load_dotenv
 from geoData import IpGeoData
-import json
 from kml import KML
 
 if __name__=="__main__":
